@@ -1,0 +1,61 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ -->
+
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style type="text/css">
+      body {
+        margin: 50px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+   -->
+  <script src="./steem.min.js"></script>
+	<script src="steemconnect.min.js"></script>
+	<script src="steemconnect-widget.js"></script>
+	<script src="popup.js"></script>
+
+
+  </head>
+	<!--<button type ="submit" align="center" style="width:300px" id ="button">Submit</button>-->
+  <button id="Vote">Play Now</button>
+  <p id="subtitle"></p>   <input type="checkbox" name="vehicle" value="Show on website"> Show on website<br>
+  <p id="speed"></p>   <input type="checkbox" name="vehicle" value="Show on website"> Show on website<br>
+  <p id="comments"></p>   <input type="checkbox" name="vehicle" value="Show on website"> Show on website<br>
+
+    <h1>Speech rate</h1>
+
+    <div id="container">
+      <span>Speech rate</span>
+      <select id="dropdown">
+        <option selected disabled hidden value=''></option>
+        <option value="2.5">2.5</option>
+        <option value="2">2</option>
+        <option value="1.5">1.5</option>
+        <option value="1">1</option>
+      </select>
+    </div>
+  </body>
+</html>
